@@ -7,6 +7,7 @@ import geoCode from './utils/geocode.js'
 import forecast from './utils/forecast.js'
 
 const app = express()
+const port = process.env.PORT || 3000
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const viewsPath = path.join(__dirname, './../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
@@ -89,6 +90,6 @@ app.get('*', async (req, res)=> {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Listening on port 3000')
+app.listen(port, () => {
+    console.log(`Listening on port ${port}`)
 })
